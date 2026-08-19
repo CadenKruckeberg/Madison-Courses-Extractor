@@ -1,8 +1,10 @@
 # Madison Courses Extractor
+> [!NOTE]
+> Active development and maintenance of this project is now done under the [Madgrades extractor](https://github.com/Madgrades/madgrades-extractor)! This repository is now read-only.
 
 This tool extracts data from the University of Wisconsin–Madison's [Percentage Grade Distribution Reports (PGDR)](https://registrar.wisc.edu/grade-reports/#:~:text=Course%20Grade%2DDistribution%20Reports) and [Departmental Instructional Reports (DIR)](https://registrar.wisc.edu/curricular-build/#dir:~:text=The%20Departmental%20Instructional%20Report%20%28DIR%29%20contains%20every%20scheduled%20course%20section%20for%20every%20department%2E), interprets the data as a human would, converts them to tabular form, and outputs them as CSV files.
 
-* **Accurate:** This extractor was designed and built with accuracy as its most important feature from its conception. Though verifying 100% accuracy would be a monumental task, this tool's output has been compared with other extractors' outputs to improve the accuracy of all extractors involved. As of August 2026, this tool extracts 1,940,159 PDF lines with 1,272,804 rows of actual data, while having only 6 known inaccuracies, resulting in an estimated 99.9995% accuracy.
+* **Accurate:** Having high accuracy is this tool's first priority. Though verifying 100% accuracy would be a monumental task, this tool's output has been compared with other extractors' outputs to improve the accuracy of all extractors involved. It was designed and built with accuracy as its most important feature from its conception. As of August 2026, this tool extracts 1,940,159 PDF lines with 1,272,804 rows of actual data, while having only 6 known inaccuracies, resulting in an estimated 99.9995% accuracy.
 * **Fast:** Built with [tabula-java](https://github.com/tabulapdf/tabula-java), this tool is dramatically faster than comparable tools built on other PDF parsing libraries that I have seen. Additionally, this tool can take advantage of multithreading.
 * **Maintainable:** Despite the inherent headaches that come with extracting data from PDFs, this tool was intended to be maintainable. It was built with the mindset that there are more new PDF formats to come, and they may even look wildly different from existing ones.
 * **Unopinionated:** This tool makes as few decisions about the data for you as possible. It delivers them presented as closely as possible to how they are interpreted from the reports.
@@ -19,7 +21,8 @@ This tool extracts data from the University of Wisconsin–Madison's [Percentage
 
 ## Usage
 
-```
+```bash
+> java -jar Madison-Courses-Extractor.jar --help
 Usage: madison-courses-extractor [-ehvV] [-o=<outputDirectory>]
                                  [-t=<threadCount>] INPUT...
 Extracts tabular data from UW-Madison report PDFs.
